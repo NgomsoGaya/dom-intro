@@ -7,8 +7,8 @@ const callTotalOne = document.querySelector(".callTotalOne")
 const smsTotalOne = document.querySelector(".smsTotalOne")	
 const totalOne = document.querySelector(".totalOne")
 //add an event listener for when the add button is pressed
-var callsTotal = 0;
-var smsTotal = 0;
+var callsTotal1 = 0;
+var smsTotal1 = 0;
 
 //in the event listener check if the value in the bill type textbox is 'sms' or 'call'
 // * add the appropriate value to the running total
@@ -19,11 +19,11 @@ function textBillTotal(){
     var billTypeEntered = billTypeText.value.trim();
     // update the correct total
     if (billTypeEntered.toLowerCase() == "call"){
-        callsTotal += 2.75
+        callsTotal1 += 2.75
         document.querySelector(".validationOne").innerHTML = ""
     }
     else if (billTypeEntered.toLowerCase() == "sms"){
-        smsTotal += 0.75;
+        smsTotal1 += 0.75;
         document.querySelector(".validationOne").innerHTML = ""
     }
     else if (billTypeEntered.toLowerCase() !== "call" || billTypeEntered.toLowerCase()!== "sms"){
@@ -33,15 +33,15 @@ function textBillTotal(){
     //update the totals that is displayed on the screen.
     callTotalOne.innerHTML = callsTotal.toFixed(2);
     smsTotalOne.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
-    totalOne.innerHTML = totalCost.toFixed(2);
+    var totalCost1 = callsTotal1 + smsTotal1;
+    totalOne.innerHTML = totalCost1.toFixed(2);
      
      //color the total based on the criteria
-     if (totalCost >= 50){
+     if (totalCost1 >= 50){
          // adding the danger class will make the text red
          totalOne.classList.add("danger");
      }
-     else if (totalCost >= 30){
+     else if (totalCost1 >= 30){
          totalOne.classList.add("warning");
      }
 }
