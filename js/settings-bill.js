@@ -14,8 +14,8 @@ const addButton = document.querySelector(".addButton")
 //get a reference to the 'Update settings' button
 const updateSettings = document.querySelector(".updateSettings")
 // create a variables that will keep track of all the settings
-var callCost = 0
-var smsCost = 0
+var callCost3= 0
+var smsCost3 = 0
 var warningLevel = 0
 var criticalLevel = 0
 // create a variables that will keep track of all three totals.
@@ -25,8 +25,8 @@ var totalThree = 0
 //add an event listener for when the 'Update settings' button is pressed
 function updateClicked() {
 
-    callCost = callCostSetting.value
-    smsCost = smsCostSetting.value
+    callCost3 = callCostSetting.value
+    smsCost3 = smsCostSetting.value
     warningLevel = warningLevelSetting.value
     criticalLevel = criticalLevelSetting.value
 
@@ -39,11 +39,11 @@ function addClicked() {
     if (checkedRadioBtn) {
         var inputOfChecked = checkedRadioBtn.value;
         if (inputOfChecked == 'sms') {
-            smsTotalThree += parseFloat(smsCost)
+            smsTotalThree += parseFloat(smsCost3)
         }
 
         else if (inputOfChecked == 'call') {
-            callTotallThree += parseFloat(callCost)
+            callTotallThree += parseFloat(callCost3)
         }
 
 
@@ -57,7 +57,7 @@ function addClicked() {
             totalElement.classList.add("danger");
             addButton.disabled = true
         }
-        else if (totalThree >= warningLevel) {
+        else if (totalThree >= warningLevelSetting.value) {
             totalElement.classList.add("warning");
             addButton.disabled = false
         }
