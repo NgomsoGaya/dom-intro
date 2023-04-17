@@ -20,15 +20,9 @@ function textBillTotal(){
     // update the correct total
     if (billTypeEntered.toLowerCase() == "call"){
         callsTotal1 += 2.75
-        document.querySelector(".validationOne").innerHTML = ""
     }
     else if (billTypeEntered.toLowerCase() == "sms"){
         smsTotal1 += 0.75;
-        document.querySelector(".validationOne").innerHTML = ""
-    }
-    else if (billTypeEntered.toLowerCase() !== "call" || billTypeEntered.toLowerCase()!== "sms"){
-        document.querySelector(".validationOne").innerHTML = "Please input call or sms only"
-        
     }
     //update the totals that is displayed on the screen.
     callTotalOne.innerHTML = callsTotal1.toFixed(2);

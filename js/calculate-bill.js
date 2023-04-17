@@ -23,22 +23,16 @@ function calculateBtnClicked() {
         var phoneBillList = callSmsList[i].trim();
         if (phoneBillList.toLowerCase() == "sms") {
             total += 0.65;
-            document.querySelector(".validation").innerHTML = ""
         }
         else if (phoneBillList.toLowerCase() == "call") {
             total += 2.75;
-            document.querySelector(".validation").innerHTML = ""
         }
-         else if (phoneBillList.toLowerCase() !== "call" || phoneBillList.toLowerCase()!== "sms"){
-             document.querySelector(".validation").innerHTML = "Please input call or sms only"
-             
-         }
     }
     billTotalElement.innerHTML = total.toFixed(2)
-    if (total > 30.00){
+    if (total >= 30.00){
         billTotalElement.classList.add("danger")
     }
-    else if (total > 20.00 ){
+    else if (total >= 20.00 ){
         billTotalElement.classList.remove("danger")
         billTotalElement.classList.add("warning");
     }
